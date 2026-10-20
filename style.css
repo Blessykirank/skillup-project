@@ -1,0 +1,475 @@
+/* ===== 1. GLOBAL STYLES ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple: #7655ef;
+    --pink: #e86ba8;
+    --blue: #6a9cf7;
+    --dark: #292343;
+    --muted: #77738d;
+    --light-bg: #f8f7ff;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--light-bg);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+/* ===== 2. NAVIGATION BAR ===== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 7%;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 4px 22px rgba(55, 40, 100, 0.07);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--purple);
+    font-size: 27px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 13px;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--purple), var(--pink));
+}
+
+.logo-highlight {
+    color: var(--pink);
+}
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #514d68;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--purple);
+}
+
+/* Navigation buttons */
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 11px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.login-btn {
+    color: var(--purple);
+    background: #f0ecff;
+}
+
+.signup-btn {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--purple), #a45af0);
+}
+
+.login-btn:hover,
+.signup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(118, 85, 239, 0.2);
+}
+
+/* Mobile menu button */
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--purple);
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ===== 3. HOMEPAGE LAYOUT ===== */
+
+.home-page {
+    min-height: 78vh;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 55px;
+    max-width: 1400px;
+    margin: auto;
+    padding: 75px 7%;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 90% 10%, #eee7ff 0, transparent 35%),
+        radial-gradient(circle at 5% 90%, #ffeaf4 0, transparent 30%),
+        var(--light-bg);
+}
+
+/* Welcome label */
+
+.welcome-tag {
+    display: inline-block;
+    padding: 9px 15px;
+    border: 1px solid #e4dcff;
+    border-radius: 30px;
+    background: #ffffffb8;
+    color: var(--purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 24px;
+}
+
+/* Main heading */
+
+.home-content h1 {
+    font-size: clamp(38px, 5vw, 65px);
+    line-height: 1.15;
+    letter-spacing: -1.8px;
+    margin-bottom: 24px;
+}
+
+.home-content h1 span {
+    color: var(--purple);
+}
+
+/* Description */
+
+.home-description {
+    max-width: 540px;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+/* Homepage buttons */
+
+.home-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.start-btn,
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 23px;
+    border-radius: 11px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.start-btn {
+    color: var(--white);
+    background: linear-gradient(135deg, var(--purple), #a45af0);
+    box-shadow: 0 8px 20px #7655ef35;
+}
+
+.explore-btn {
+    color: var(--dark);
+    background: var(--white);
+    border: 1px solid #e7e2f2;
+}
+
+.start-btn:hover,
+.explore-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Small note */
+
+.home-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 32px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ===== 4. LEARNING ILLUSTRATION ===== */
+
+.home-illustration {
+    position: relative;
+    padding: 35px 20px;
+}
+
+.illustration-card {
+    position: relative;
+    padding: 30px;
+    border: 1px solid #ffffff;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 25px 65px rgba(83, 58, 140, 0.13);
+    text-align: center;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+    background: #f0ecff;
+    font-size: 24px;
+}
+
+.card-status {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.book-illustration {
+    margin: 28px 0 18px;
+    font-size: clamp(75px, 10vw, 125px);
+    filter: drop-shadow(0 10px 10px #7655ef20);
+}
+
+.illustration-card h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.illustration-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.learning-bars {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 25px;
+}
+
+.learning-bars span {
+    width: 45px;
+    height: 6px;
+    border-radius: 20px;
+    background: var(--purple);
+}
+
+.learning-bars span:nth-child(2) {
+    background: var(--pink);
+}
+
+.learning-bars span:nth-child(3) {
+    background: var(--blue);
+}
+
+/* Decorative stars */
+
+.floating-star {
+    position: absolute;
+    color: var(--pink);
+    font-size: 35px;
+}
+
+.star-one {
+    top: 22%;
+    right: 8%;
+}
+
+.star-two {
+    bottom: 20%;
+    left: 7%;
+    color: var(--blue);
+}
+
+/* Floating labels */
+
+.floating-badge {
+    position: absolute;
+    padding: 12px 17px;
+    border: 1px solid #eee8ff;
+    border-radius: 14px;
+    background: var(--white);
+    box-shadow: 0 10px 30px #3e2d7515;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.badge-one {
+    top: 5px;
+    right: -5px;
+}
+
+.badge-two {
+    bottom: 5px;
+    left: -5px;
+}
+
+/* ===== 5. RESPONSIVE DESIGN ===== */
+
+@media (max-width: 1050px) {
+    .navbar {
+        padding: 18px 4%;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-actions {
+        gap: 8px;
+    }
+
+    .login-btn,
+    .signup-btn {
+        padding: 10px 13px;
+    }
+
+    .home-page {
+        gap: 25px;
+        padding: 60px 5%;
+    }
+}
+
+@media (max-width: 780px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-actions {
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px 5px 10px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .home-page {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 55px 6%;
+    }
+
+    .home-content h1 {
+        font-size: clamp(38px, 9vw, 55px);
+    }
+
+    .home-illustration {
+        max-width: 520px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media (max-width: 450px) {
+    .navbar {
+        gap: 12px;
+    }
+
+    .nav-actions {
+        gap: 6px;
+    }
+
+    .login-btn,
+    .signup-btn {
+        padding: 9px 10px;
+        font-size: 12px;
+    }
+
+    .home-buttons {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .start-btn,
+    .explore-btn {
+        width: 100%;
+    }
+
+    .illustration-card {
+        padding: 22px 15px;
+    }
+
+    .floating-badge {
+        font-size: 11px;
+        padding: 9px 11px;
+    }
+}
