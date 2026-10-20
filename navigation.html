@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp | Navigation</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f3ff, #eff6ff);
+            min-height: 100vh;
+            color: #252344;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 7%;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 4px 20px rgba(45, 35, 100, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #6c4cf1;
+            font-size: 25px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            color: white;
+            background: linear-gradient(135deg, #7957f5, #ec70b5);
+            font-size: 23px;
+        }
+
+        /* Navigation links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #514d68;
+            font-size: 15px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #7655ef;
+        }
+
+        /* Login button */
+        .login-btn {
+            padding: 11px 24px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #7655ef, #a45af0);
+            color: white !important;
+            transition: 0.3s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(118, 85, 239, 0.25);
+        }
+
+        /* Mobile menu button */
+        .menu-btn {
+            display: none;
+            border: none;
+            background: none;
+            color: #6c4cf1;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* Demo page content */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #7957f5;
+        }
+
+        .hero p {
+            color: #77738d;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .hero a {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 14px 25px;
+            border-radius: 10px;
+            background: #7957f5;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1000px) {
+            .navbar {
+                padding: 16px 4%;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 22px;
+                background: white;
+                flex-direction: column;
+                gap: 24px;
+                box-shadow: 0 10px 15px rgba(45, 35, 100, 0.08);
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .login-btn {
+                display: inline-block;
+            }
+
+            .hero {
+                padding: 90px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#home" class="logo">
+            <span class="logo-icon">S</span>
+            SkillUp
+        </a>
+
+        <button class="menu-btn"
+                id="menuBtn"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navLinks">
+            ☰
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#courses">Explore Courses</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#login" class="login-btn">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Demo content to test navigation links -->
+    <main class="hero" id="home">
+        <h1>Learn Today. <span>Lead Tomorrow.</span></h1>
+        <p>
+            Welcome to SkillUp — your journey towards new skills
+            and better opportunities starts here.
+        </p>
+        <a href="#courses">Explore Courses →</a>
+    </main>
+
+    <section id="courses" class="hero">
+        <h1>Explore Courses</h1>
+        <p>Discover courses that help you develop new skills.</p>
+    </section>
+
+    <section id="categories" class="hero">
+        <h1>Course Categories</h1>
+        <p>Explore technology, programming and other learning paths.</p>
+    </section>
+
+    <section id="about" class="hero">
+        <h1>About SkillUp</h1>
+        <p>Our goal is to make learning accessible to everyone.</p>
+    </section>
+
+    <section id="contact" class="hero">
+        <h1>Contact Us</h1>
+        <p>Have a question? Get in touch with our team.</p>
+    </section>
+
+    <section id="login" class="hero">
+        <h1>Welcome Back!</h1>
+        <p>This is a demo login destination, not a working login form.</p>
+    </section>
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+            const isOpen = navLinks.classList.toggle("show");
+
+            menuBtn.setAttribute("aria-expanded", isOpen);
+            menuBtn.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Close the mobile menu after selecting a link
+        document.querySelectorAll(".nav-links a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("show");
+                menuBtn.setAttribute("aria-expanded", "false");
+                menuBtn.textContent = "☰";
+            });
+        });
+    </script>
+
+</body>
+</html>
