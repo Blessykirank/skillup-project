@@ -1,0 +1,37 @@
+
+<section class="content-page auth-page">
+    <div class="auth-card">
+        <div class="auth-symbol">✨</div>
+        <span class="welcome-tag">START SOMETHING AMAZING</span>
+        <h1>Join <span>SkillUp</span></h1>
+        <p>Create your account and begin exploring new skills.</p>
+
+        <form class="site-form" id="signupForm">
+            <label for="signupName">Full Name</label>
+            <input id="signupName" name="name" type="text"
+                   placeholder="Enter your full name" autocomplete="name" required>
+
+            <label for="signupEmail">Email Address</label>
+            <input id="signupEmail" name="email" type="email"
+                   placeholder="you@example.com" autocomplete="email" required>
+
+            <label for="signupPassword">Create Password</label>
+            <input id="signupPassword" name="password" type="password"
+                   placeholder="At least 8 characters"
+                   minlength="8" autocomplete="new-password" required>
+
+            <label for="signupConfirm">Confirm Password</label>
+            <input id="signupConfirm" name="confirmPassword" type="password"
+                   placeholder="Enter your password again"
+                   minlength="8" autocomplete="new-password" required>
+
+            <button type="submit" class="signup-btn">Create My Account →</button>
+            <p class="form-message" id="signupFeedback" aria-live="polite"></p>
+        </form>
+
+        <p class="auth-switch">
+            Already have an account?
+            <a href="#" data-page="login">Log In</a>
+        </p>
+    </div>
+</section>
