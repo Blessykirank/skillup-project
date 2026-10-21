@@ -562,3 +562,341 @@ body {
         box-shadow: none;
     }
 }
+
+/* ========================================
+   SKILLUP - ADDITIONAL PAGE STYLES
+   ======================================== */
+
+/* Shared page layout */
+.content-page {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+    padding: 60px 0;
+    color: var(--dark);
+}
+
+.page-heading {
+    max-width: 720px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.page-heading h1,
+.auth-card h1 {
+    font-size: clamp(30px, 4vw, 46px);
+    line-height: 1.2;
+    margin: 18px 0;
+}
+
+.page-heading h1 span,
+.auth-card h1 span {
+    color: var(--purple);
+}
+
+.page-heading p,
+.auth-card > p {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* Courses page */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.course-card {
+    padding: 25px;
+    background: var(--white);
+    border: 1px solid #ece8fa;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(41, 35, 67, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.course-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(41, 35, 67, 0.1);
+}
+
+.course-icon {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 18px;
+    border-radius: 16px;
+    font-size: 27px;
+}
+
+.purple { background: #eee8ff; }
+.pink { background: #ffe8f1; }
+.blue { background: #e5efff; }
+.peach { background: #fff0e4; }
+
+.course-level {
+    color: var(--purple);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.course-card h2 {
+    margin: 12px 0;
+    font-size: 21px;
+}
+
+.course-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.course-meta {
+    font-size: 13px;
+}
+
+.course-card .start-btn {
+    display: inline-block;
+    margin-top: 12px;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.course-card[hidden] {
+    display: none;
+}
+
+/* About Us page */
+.about-hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 35px;
+    margin-bottom: 35px;
+    padding: 40px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #f0eaff, #fff0f6);
+}
+
+.about-hero h2 {
+    font-size: 30px;
+}
+
+.about-hero p {
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.about-emoji {
+    text-align: center;
+    font-size: clamp(65px, 10vw, 120px);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    padding: 25px;
+    border: 1px solid #ece8fa;
+    border-top: 4px solid var(--purple);
+    border-radius: 20px;
+    background: var(--white);
+}
+
+.feature-card h3 {
+    margin: 12px 0;
+}
+
+.feature-card p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.about-quote {
+    padding: 35px 15px;
+    text-align: center;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* Contact page */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    align-items: start;
+    gap: 35px;
+}
+
+.contact-info {
+    padding: 30px;
+    border-radius: 22px;
+    background: linear-gradient(145deg, #eee8ff, #ffeaf3);
+}
+
+.contact-info > p,
+.contact-item p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.contact-item {
+    display: flex;
+    align-items: start;
+    gap: 14px;
+    margin-top: 26px;
+}
+
+.contact-item > span {
+    font-size: 25px;
+}
+
+/* Shared forms */
+.site-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 28px;
+    border: 1px solid #ece8fa;
+    border-radius: 20px;
+    background: var(--white);
+    box-shadow: 0 10px 30px rgba(41, 35, 67, 0.05);
+}
+
+.site-form label {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.site-form input,
+.site-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #ded9ee;
+    border-radius: 10px;
+    background: #fcfbff;
+    color: var(--dark);
+    font: inherit;
+    outline: none;
+}
+
+.site-form input:focus,
+.site-form textarea:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 3px rgba(118, 85, 239, 0.1);
+}
+
+.site-form textarea {
+    resize: vertical;
+}
+
+.site-form .signup-btn {
+    margin-top: 8px;
+    padding: 14px;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.form-message {
+    color: var(--purple);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Login and signup pages */
+.auth-page {
+    display: flex;
+    justify-content: center;
+}
+
+.auth-card {
+    box-sizing: border-box;
+    width: min(460px, 100%);
+    padding: 35px;
+    border: 1px solid #ece8fa;
+    border-radius: 24px;
+    background: var(--white);
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(41, 35, 67, 0.05);
+}
+
+.auth-symbol {
+    margin-bottom: 16px;
+    font-size: 42px;
+}
+
+.auth-card .site-form {
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    text-align: left;
+}
+
+.auth-switch {
+    font-size: 14px;
+}
+
+.auth-switch a {
+    color: var(--purple);
+    font-weight: 600;
+}
+
+/* Buttons and feedback */
+.start-btn,
+.signup-btn {
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.start-btn:hover,
+.signup-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.92;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--purple);
+    outline-offset: 3px;
+}
+
+/* Responsive layout */
+@media (max-width: 800px) {
+    .course-grid,
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-hero,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .course-grid,
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content-page {
+        padding: 40px 0;
+    }
+
+    .about-hero,
+    .contact-info,
+    .site-form,
+    .auth-card {
+        padding: 22px;
+    }
+}
