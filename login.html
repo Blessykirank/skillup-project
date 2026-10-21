@@ -1,0 +1,28 @@
+
+<section class="content-page auth-page">
+    <div class="auth-card">
+        <div class="auth-symbol">🔑</div>
+        <span class="welcome-tag">WELCOME BACK</span>
+        <h1>Log In to <span>SkillUp</span></h1>
+        <p>Continue your learning journey.</p>
+
+        <form class="site-form" id="loginForm">
+            <label for="loginEmail">Email Address</label>
+            <input id="loginEmail" name="email" type="email"
+                   placeholder="Enter your email" autocomplete="email" required>
+
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" name="password" type="password"
+                   placeholder="Enter your password"
+                   autocomplete="current-password" required>
+
+            <button type="submit" class="signup-btn">Log In →</button>
+            <p class="form-message" id="loginFeedback" aria-live="polite"></p>
+        </form>
+
+        <p class="auth-switch">
+            New to SkillUp?
+            <a href="#" data-page="signup">Create an account</a>
+        </p>
+    </div>
+</section>
