@@ -20,7 +20,11 @@
             <h2>Web Development</h2>
             <p>Learn HTML, CSS and JavaScript to create beautiful websites.</p>
             <p class="course-meta">📚 6 modules · Self-paced</p>
-            <button class="start-btn" data-course="Web Development">Explore Course →</button>
+            <button
+    class="start-btn"
+    data-open-course="web-development">
+    Start Learning
+    </button>
         </article>
 
         <article class="course-card">
@@ -70,4 +74,12 @@
     </div>
 
     <p id="courseMessage" class="form-message" aria-live="polite"></p>
+     <section id="courseLearning" hidden>
+    <button type="button" id="backToCourses">
+        ← Back to Courses
+    </button>
+
+    <div id="courseLessonContent"></div>
+</section>
+
 </section>
