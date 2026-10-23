@@ -1,85 +1,225 @@
 
-<section class="content-page">
-    
-    <div class="nav-dropdown">
-    <button class="dropdown-toggle" id="coursesToggle"
-            aria-expanded="false">
-    </button>
+<section class="content-page courses-page">
 
-    <div class="dropdown-menu" id="coursesMenu">
-        <a href="courses.html" class="dropdown-item">All Courses</a>
-        <a href="courses.html?category=web-development" class="dropdown-item">Web Development</a>
-        <a href="courses.html?category=ai" class="dropdown-item">Artificial Intelligence</a>
-        <a href="courses.html?category=data-science" class="dropdown-item">Data Science</a>
+    <!-- Page Heading -->
+    <div class="page-heading">
+        <p class="section-label">LEARN • PRACTICE • GROW</p>
+        <h1>Explore Our <span>Courses</span></h1>
+        <p>
+            Build real skills with beginner-friendly lessons,
+            practical examples, and hands-on practice.
+        </p>
     </div>
 
-    <div class="course-grid">
+    <!-- Course Cards -->
+    <div class="course-grid" id="courseGrid">
+
+        <!-- 1. Web Development -->
         <article class="course-card">
             <div class="course-icon purple">💻</div>
             <span class="course-level">BEGINNER</span>
             <h2>Web Development</h2>
-            <p>Learn HTML, CSS and JavaScript to create beautiful websites.</p>
-            <p class="course-meta">📚 6 modules · Self-paced</p>
+            <p>
+                Learn HTML, CSS, and JavaScript to create beautiful,
+                interactive websites.
+            </p>
+            <p class="course-meta">📚 10 lessons · Self-paced</p>
             <button
-    class="start-btn"
-    data-open-course="web-development">
-    Start Learning
-    </button>
+                type="button"
+                class="start-btn"
+                data-open-course="web-development">
+                Start Learning →
+            </button>
         </article>
 
+        <!-- 2. Artificial Intelligence -->
         <article class="course-card">
             <div class="course-icon pink">🤖</div>
             <span class="course-level">BEGINNER</span>
             <h2>Artificial Intelligence</h2>
-            <p>Explore AI concepts, machine learning, and intelligent systems.</p>
-            <p class="course-meta">📚 8 modules · Self-paced</p>
-            <button class="start-btn" data-course="Artificial Intelligence">Explore Course →</button>
+            <p>
+                Explore AI concepts, machine learning, neural networks,
+                and intelligent systems.
+            </p>
+            <p class="course-meta">📚 10 lessons · Self-paced</p>
+            <button
+                type="button"
+                class="start-btn"
+                data-open-course="artificial-intelligence">
+                Start Learning →
+            </button>
         </article>
 
+        <!-- 3. Data Science -->
         <article class="course-card">
             <div class="course-icon blue">📊</div>
             <span class="course-level">BEGINNER</span>
             <h2>Data Science</h2>
-            <p>Discover data analysis, Python, visualization, and insights.</p>
-            <p class="course-meta">📚 7 modules · Self-paced</p>
-            <button class="start-btn" data-course="Data Science">Explore Course →</button>
+            <p>
+                Learn data analysis, data visualization, statistics,
+                and how to discover useful insights.
+            </p>
+            <p class="course-meta">📚 10 lessons · Self-paced</p>
+            <button
+                type="button"
+                class="start-btn"
+                data-open-course="data-science">
+                Start Learning →
+            </button>
         </article>
 
+        <!-- 4. UI/UX Design -->
         <article class="course-card">
             <div class="course-icon peach">🎨</div>
             <span class="course-level">BEGINNER</span>
             <h2>UI/UX Design</h2>
-            <p>Learn design fundamentals and create user-friendly experiences.</p>
-            <p class="course-meta">📚 5 modules · Self-paced</p>
-            <button class="start-btn" data-course="UI/UX Design">Explore Course →</button>
+            <p>
+                Understand user interfaces, user experience,
+                wireframes, prototypes, and design principles.
+            </p>
+            <p class="course-meta">📚 10 lessons · Self-paced</p>
+            <button
+                type="button"
+                class="start-btn"
+                data-open-course="ui-ux-design">
+                Start Learning →
+            </button>
         </article>
 
+        <!-- 5. Python Programming -->
         <article class="course-card">
             <div class="course-icon blue">🐍</div>
             <span class="course-level">BEGINNER</span>
             <h2>Python Programming</h2>
-            <p>Build your programming foundation with Python examples.</p>
-            <p class="course-meta">📚 6 modules · Self-paced</p>
-            <button class="start-btn" data-course="Python Programming">Explore Course →</button>
+            <p>
+                Build your programming foundation with Python syntax,
+                examples, functions, and projects.
+            </p>
+            <p class="course-meta">📚 10 lessons · Self-paced</p>
+            <button
+                type="button"
+                class="start-btn"
+                data-open-course="python-programming">
+                Start Learning →
+            </button>
         </article>
 
+        <!-- 6. Cloud Computing -->
         <article class="course-card">
             <div class="course-icon purple">☁️</div>
             <span class="course-level">BEGINNER</span>
             <h2>Cloud Computing</h2>
-            <p>Understand cloud services, deployment, and modern infrastructure.</p>
-            <p class="course-meta">📚 6 modules · Self-paced</p>
-            <button class="start-btn" data-course="Cloud Computing">Explore Course →</button>
+            <p>
+                Understand cloud services, deployment, storage,
+                virtualization, and modern infrastructure.
+            </p>
+            <p class="course-meta">📚 10 lessons · Self-paced</p>
+            <button
+                type="button"
+                class="start-btn"
+                data-open-course="cloud-computing">
+                Start Learning →
+            </button>
         </article>
+
     </div>
 
-    <p id="courseMessage" class="form-message" aria-live="polite"></p>
-     <section id="courseLearning" hidden>
-    <button type="button" id="backToCourses">
-        ← Back to Courses
-    </button>
+    <!-- General Course Message -->
+    <p
+        id="courseMessage"
+        class="form-message"
+        aria-live="polite">
+    </p>
 
-    <div id="courseLessonContent"></div>
-</section>
+    <!-- Shared Learning Area -->
+    <section id="courseLearning" hidden>
+
+        <button
+            type="button"
+            id="backToCourses"
+            class="back-courses-btn">
+            ← Back to Courses
+        </button>
+
+        <!-- Course Title and Progress -->
+        <div class="learning-header">
+            <p class="section-label">YOUR LEARNING JOURNEY</p>
+            <h2 id="learningCourseTitle">Course Lessons</h2>
+            <p id="learningCourseDescription">
+                Learn step by step with explanations and practical examples.
+            </p>
+
+            <div class="progress-information">
+                <span id="progressText">0 of 10 lessons completed</span>
+                <span id="progressPercentage">0%</span>
+            </div>
+
+            <div
+                class="progress-track"
+                role="progressbar"
+                aria-label="Course completion"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                id="courseProgressTrack">
+                <div
+                    class="progress-fill"
+                    id="courseProgressFill">
+                </div>
+            </div>
+        </div>
+
+        <!-- Lesson Navigation -->
+        <div class="lesson-navigation">
+            <button
+                type="button"
+                id="previousLesson"
+                class="lesson-nav-btn"
+                disabled>
+                ← Previous
+            </button>
+
+            <span id="lessonCounter">Lesson 1 of 10</span>
+
+            <button
+                type="button"
+                id="nextLesson"
+                class="lesson-nav-btn">
+                Next →
+            </button>
+        </div>
+
+        <!-- Lesson Content: populated by script.js -->
+        <div id="courseLessonContent" aria-live="polite">
+            <p>
+                Select a course to begin your learning journey.
+            </p>
+        </div>
+
+        <!-- Completion and Navigation -->
+        <div class="lesson-footer">
+            <label class="completion-label">
+                <input
+                    type="checkbox"
+                    id="markLessonComplete">
+                Mark this lesson as complete
+            </label>
+
+            <p
+                id="lessonFeedback"
+                class="form-message"
+                aria-live="polite">
+            </p>
+
+            <button
+                type="button"
+                id="finishCourse"
+                class="start-btn"
+                hidden>
+                Complete Course ✓
+            </button>
+        </div>
+
+    </section>
 
 </section>
