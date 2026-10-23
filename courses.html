@@ -1,7 +1,17 @@
 
 <section class="content-page">
     
-    <a href="#" data-page="courses">Courses</a>
+    <div class="nav-dropdown">
+    <button class="dropdown-toggle" id="coursesToggle"
+            aria-expanded="false">
+    </button>
+
+    <div class="dropdown-menu" id="coursesMenu">
+        <a href="courses.html" class="dropdown-item">All Courses</a>
+        <a href="courses.html?category=web-development" class="dropdown-item">Web Development</a>
+        <a href="courses.html?category=ai" class="dropdown-item">Artificial Intelligence</a>
+        <a href="courses.html?category=data-science" class="dropdown-item">Data Science</a>
+    </div>
 
     <div class="course-grid">
         <article class="course-card">
