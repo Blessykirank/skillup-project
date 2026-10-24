@@ -1090,11 +1090,19 @@ const THEME_KEY = "skillup-theme";
 function updateThemeToggle() {
     const toggle = document.getElementById("themeToggle");
 
+    function updateThemeToggle() {
+    const toggle = document.getElementById("themeToggle");
+
     if (!toggle) return;
 
     const isDark = document.body.classList.contains("dark-mode");
+    const icon = isDark ? "☀️" : "🌙";
 
-    toggle.textContent = isDark ? "☀️" : "🌙";
+    // Update only when the icon actually needs changing
+    if (toggle.textContent !== icon) {
+        toggle.textContent = icon;
+    }
+
     toggle.setAttribute(
         "aria-label",
         isDark ? "Switch to light mode" : "Switch to dark mode"
