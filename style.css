@@ -1361,3 +1361,62 @@ select:focus-visible {
         transform: none;
     }
 }
+
+/* ========================================
+   SKILLUP — HOMEPAGE POLISH, STEP 2
+   ======================================== */
+
+/* Smooth entrance for the existing hero */
+@keyframes skillUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-content {
+    animation: skillUpFadeIn 0.7s ease both;
+}
+
+.home-illustration {
+    animation: skillUpFadeIn 0.9s ease both;
+}
+
+/* Refine the existing illustration card */
+.illustration-card {
+    border-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 25px 65px rgba(83, 58, 140, 0.15);
+}
+
+/* Gentle movement for the decorative stars */
+.floating-star {
+    animation: skillUpFloat 3s ease-in-out infinite;
+}
+
+.star-two {
+    animation-delay: 1.2s;
+}
+
+@keyframes skillUpFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .home-content,
+    .home-illustration,
+    .floating-star {
+        animation: none;
+    }
+}
