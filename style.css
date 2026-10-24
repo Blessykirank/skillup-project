@@ -1420,3 +1420,77 @@ select:focus-visible {
         animation: none;
     }
 }
+/* DARK / LIGHT MODE TOGGLE BUTTON */
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--purple);
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--dark);
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s ease,
+                transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+}
+
+/* DARK MODE COLORS */
+body.dark-mode {
+    --dark: #f3f0ff;
+    --muted: #c0bbd2;
+    --light-bg: #171526;
+    --white: #242137;
+    --purple: #a795ff;
+    --purple-dark: #c0b2ff;
+    --pink: #ffafd1;
+    --blue: #9dbdff;
+    background: var(--light-bg);
+    color: var(--dark);
+}
+
+/* Dark mode for common sections */
+body.dark-mode .navbar,
+body.dark-mode .course-card,
+body.dark-mode .illustration-card,
+body.dark-mode .lesson-card,
+body.dark-mode .contact-form,
+body.dark-mode .auth-card,
+body.dark-mode .about-card {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+    background-color: #302b45;
+    color: #ffffff;
+    border-color: #51496c;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #c0bbd2;
+}
+
+body.dark-mode .theme-toggle {
+    background: #302b45;
+    color: #ffffff;
+    border-color: #a795ff;
+}
+
+body.dark-mode .home-page {
+    background: linear-gradient(135deg, #201b37, #302447);
+}
+
+body.dark-mode footer {
+    background-color: #171526;
+    color: var(--dark);
+}
