@@ -1,8 +1,11 @@
 
 const navigation = document.getElementById("navigation");
 const content = document.getElementById("content");
+const RETURN_PAGE_KEY = "skillup-return-page";
 
-const PROGRESS_KEY = "skillup-course-progress-v1";
+const isCourseDocument =
+    window.location.pathname.split("/").pop() === "course.html";
+    const PROGRESS_KEY = "skillup-course-progress-v1";
 
 let currentCourse = "";
 let currentLessonIndex = 0;
@@ -590,6 +593,7 @@ async function loadPage(page, category = "") {
     }
 }
 
+
 async function connectFiles() {
     try {
         const response = await fetch("navigation.html");
@@ -599,7 +603,33 @@ async function connectFiles() {
         }
 
         navigation.innerHTML = await response.text();
-        await loadPage("home");
+
+        // If this is course.html, load the selected course
+        if (isCourseDocument) {
+            const params = new URLSearchParams(window.location.search);
+            const courseId = params.get("course");
+
+            await loadPage("courses");
+
+            if (courses[courseId]) {
+                openCourse(courseId);
+            } else {
+                const message = document.getElementById("courseMessage");
+
+                if (message) {
+                    message.textContent =
+                        "Course not found. Please return to all courses.";
+                }
+            }
+
+            return;
+        }
+
+        // If returning from course.html, open the courses page
+        const params = new URLSearchParams(window.location.search);
+        const requestedPage = params.get("page") || "home";
+
+        await loadPage(requestedPage);
     } catch (error) {
         console.error(error);
 
@@ -613,6 +643,7 @@ async function connectFiles() {
             </section>`;
     }
 }
+
 
 // ========================================
 // 4. OPEN A COURSE
@@ -892,14 +923,20 @@ document.addEventListener("click", event => {
     const pageLink = event.target.closest("[data-page]");
 
     if (pageLink) {
-        event.preventDefault();
+    event.preventDefault();
 
-        loadPage(
-            pageLink.dataset.page,
-            pageLink.dataset.category || ""
-        );
-        return;
+    const page = pageLink.dataset.page;
+    const category = pageLink.dataset.category || "";
+
+    if (isCourseDocument) {
+        window.location.href =
+            `index.html?page=${encodeURIComponent(page)}`;
+    } else {
+        loadPage(page, category);
     }
+
+    return;
+}
 
     const coursesToggle = event.target.closest("#coursesToggle");
 
@@ -926,12 +963,21 @@ document.addEventListener("click", event => {
     }
 
     // Start any of the six courses
-    const startButton = event.target.closest("[data-open-course]");
+    // Start a course on the separate course.html page
+const startButton = event.target.closest("[data-open-course]");
 
-    if (startButton) {
-        openCourse(startButton.dataset.openCourse);
-        return;
+if (startButton) {
+    const courseId = startButton.dataset.openCourse;
+
+    if (courses[courseId]) {
+        sessionStorage.setItem("skillup-return-page", "courses");
+
+        window.location.href =
+            `course.html?course=${encodeURIComponent(courseId)}`;
     }
+
+    return;
+}
 
     // Previous lesson
     if (event.target.closest("#previousLesson")) {
