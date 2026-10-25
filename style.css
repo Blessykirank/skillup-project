@@ -1601,3 +1601,76 @@ body.dark-mode #courseLearning .completion-label {
     color: #f3f0ff;
     border-color: #51496c;
 }
+
+/* =========================================
+   SKILLUP - ABOUT & CONTACT DARK MODE FIX
+========================================= */
+
+/* ABOUT US PAGE */
+body.dark-mode .about-hero {
+    background: linear-gradient(135deg, #242137, #30243b);
+    color: #f3f0ff;
+}
+
+body.dark-mode .about-hero h2,
+body.dark-mode .feature-card h3 {
+    color: #f3f0ff;
+}
+
+body.dark-mode .about-hero p,
+body.dark-mode .feature-card p {
+    color: #d0cbe0;
+}
+
+body.dark-mode .feature-card {
+    background: #242137;
+    color: #f3f0ff;
+    border-color: #39334f;
+}
+
+body.dark-mode .about-quote {
+    color: #e0d9f5;
+}
+
+/* CONTACT PAGE */
+body.dark-mode .contact-info {
+    background: linear-gradient(145deg, #242137, #30243b);
+    color: #f3f0ff;
+}
+
+body.dark-mode .contact-info h2,
+body.dark-mode .contact-item h3 {
+    color: #f3f0ff;
+}
+
+body.dark-mode .contact-info p,
+body.dark-mode .contact-item p {
+    color: #d0cbe0;
+}
+
+/* CONTACT, LOGIN & SIGNUP FORMS */
+body.dark-mode .site-form {
+    background: #242137;
+    color: #f3f0ff;
+    border-color: #39334f;
+}
+
+body.dark-mode .site-form label {
+    color: #e0d9f5;
+}
+
+body.dark-mode .site-form input,
+body.dark-mode .site-form textarea {
+    background: #302b45;
+    color: #ffffff;
+    border-color: #51496c;
+}
+
+body.dark-mode .site-form input::placeholder,
+body.dark-mode .site-form textarea::placeholder {
+    color: #c0bbd2;
+}
+
+body.dark-mode .form-message {
+    color: #c0b2ff;
+}
