@@ -1547,3 +1547,57 @@ body.dark-mode .content-page .course-card p {
 body.dark-mode .content-page .course-card a {
     color: #ffffff;
 }
+
+/* =========================================
+   SKILLUP - FIX COURSE LEARNING DARK MODE
+========================================= */
+
+/* Main course learning container */
+body.dark-mode #courseLearning {
+    background: #1e1b2e !important;
+    color: #f3f0ff !important;
+    border-color: #39334f !important;
+}
+
+/* Lesson content card */
+body.dark-mode #courseLessonContent .lesson-card {
+    background: #242137 !important;
+    color: #f3f0ff !important;
+    border-color: #39334f !important;
+    border-left-color: var(--purple) !important;
+}
+
+/* Lesson headings */
+body.dark-mode #courseLearning h2,
+body.dark-mode #courseLearning h3,
+body.dark-mode #courseLearning strong {
+    color: #f3f0ff !important;
+}
+
+/* Lesson paragraphs and labels */
+body.dark-mode #courseLearning p,
+body.dark-mode #courseLearning label,
+body.dark-mode #courseLearning #lessonCounter,
+body.dark-mode #courseLearning .progress-information {
+    color: #d0cbe0 !important;
+}
+
+/* Progress bar background */
+body.dark-mode #courseLearning .progress-track {
+    background: #39334f !important;
+}
+
+/* Lesson navigation buttons */
+body.dark-mode #courseLearning .lesson-nav-btn,
+body.dark-mode #courseLearning .back-courses-btn {
+    background: #302b45;
+    color: #e5deff;
+    border-color: #51496c;
+}
+
+/* Completion checkbox area */
+body.dark-mode #courseLearning .completion-label {
+    background: #302b45;
+    color: #f3f0ff;
+    border-color: #51496c;
+}
