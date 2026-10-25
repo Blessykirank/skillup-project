@@ -1530,3 +1530,20 @@ body.dark-mode .course-learning h2,
 body.dark-mode .course-learning h3 {
     color: #f3f0ff;
 }
+
+/* Fix course learning card in dark mode */
+body.dark-mode .content-page .course-card {
+    background: #1e1b2e !important;
+    color: #f3f0ff !important;
+    border: 1px solid #39334f;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-mode .content-page .course-card h2,
+body.dark-mode .content-page .course-card p {
+    color: #f3f0ff !important;
+}
+
+body.dark-mode .content-page .course-card a {
+    color: #ffffff;
+}
