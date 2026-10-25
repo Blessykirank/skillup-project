@@ -1494,3 +1494,39 @@ body.dark-mode footer {
     background-color: #171526;
     color: var(--dark);
 }
+
+/* ===================================
+   SKILLUP DARK MODE - COURSE PAGES
+=================================== */
+
+body.dark-mode .course-detail,
+body.dark-mode .course-content,
+body.dark-mode .course-learning,
+body.dark-mode .lesson-content,
+body.dark-mode .learning-container,
+body.dark-mode .course-card,
+body.dark-mode .lesson-card {
+    background-color: #1e1b2e;
+    color: #f3f0ff;
+    border-color: #39334f;
+}
+
+body.dark-mode .course-detail p,
+body.dark-mode .course-content p,
+body.dark-mode .course-learning p,
+body.dark-mode .lesson-content p,
+body.dark-mode .learning-container p {
+    color: #d0cbe0;
+}
+
+body.dark-mode .course-detail h1,
+body.dark-mode .course-detail h2,
+body.dark-mode .course-detail h3,
+body.dark-mode .course-content h1,
+body.dark-mode .course-content h2,
+body.dark-mode .course-content h3,
+body.dark-mode .course-learning h1,
+body.dark-mode .course-learning h2,
+body.dark-mode .course-learning h3 {
+    color: #f3f0ff;
+}
