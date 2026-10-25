@@ -1081,3 +1081,51 @@ document.addEventListener("submit", event => {
 // ========================================
 
 connectFiles();
+
+/* ===================================
+   SKILLUP DARK / LIGHT MODE
+=================================== */
+
+const THEME_KEY = "skillup-theme";
+
+function updateThemeToggle() {
+    const toggle = document.getElementById("themeToggle");
+
+    if (!toggle) return;
+
+    const isDark = document.body.classList.contains("dark-mode");
+    const icon = isDark ? "☀️" : "🌙";
+    const label = isDark
+        ? "Switch to light mode"
+        : "Switch to dark mode";
+
+    if (toggle.textContent.trim() !== icon) {
+        toggle.textContent = icon;
+    }
+
+    if (toggle.getAttribute("aria-label") !== label) {
+        toggle.setAttribute("aria-label", label);
+    }
+}
+
+function applyTheme(theme) {
+    document.body.classList.toggle("dark-mode", theme === "dark");
+    localStorage.setItem(THEME_KEY, theme);
+    updateThemeToggle();
+}
+
+// Restore the saved theme
+applyTheme(localStorage.getItem(THEME_KEY) || "light");
+
+// Handle clicks, including the dynamically loaded navigation button
+document.addEventListener("click", function (event) {
+    const toggle = event.target.closest("#themeToggle");
+
+    if (!toggle) return;
+
+    const isDark = document.body.classList.contains("dark-mode");
+    applyTheme(isDark ? "light" : "dark");
+});
+
+// Update the button after navigation is loaded
+document.addEventListener("DOMContentLoaded", updateThemeToggle);
