@@ -1674,3 +1674,135 @@ body.dark-mode .site-form textarea::placeholder {
 body.dark-mode .form-message {
     color: #c0b2ff;
 }
+
+/* ===== SkillUp Home Page Footer ===== */
+
+.skillup-footer {
+    background: linear-gradient(135deg, #211b3b, #35275c);
+    color: #f8f6ff;
+    padding: 55px 7% 20px;
+    margin-top: 60px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-main {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.4fr;
+    gap: 38px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+
+.footer-logo span {
+    color: #c4b5fd;
+}
+
+.footer-brand p,
+.footer-cta p {
+    color: #d2cde5;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 15px;
+    max-width: 280px;
+}
+
+.footer-links,
+.footer-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-links h3,
+.footer-cta h3 {
+    color: #ffffff;
+    font-size: 16px;
+    margin: 5px 0 18px;
+}
+
+.footer-links a {
+    color: #d2cde5;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 13px;
+    transition: color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #c4b5fd;
+    transform: translateX(4px);
+}
+
+.footer-button {
+    display: inline-block;
+    background: #a78bfa;
+    color: #211b3b;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin-top: 14px;
+    transition: background 0.25s ease,
+                transform 0.25s ease;
+}
+
+.footer-button:hover {
+    background: #c4b5fd;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    color: #c2bdd5;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* Tablet layout */
+@media (max-width: 900px) {
+    .footer-main {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+    }
+}
+
+/* Mobile layout */
+@media (max-width: 500px) {
+    .skillup-footer {
+        padding: 40px 6% 20px;
+        margin-top: 40px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
