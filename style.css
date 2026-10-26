@@ -1806,3 +1806,86 @@ body.dark-mode .form-message {
         align-items: flex-start;
     }
 }
+
+/* ===== Premium Dark Mode Toggle ===== */
+
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(114, 87, 232, 0.22);
+    border-radius: 50%;
+    background: rgba(114, 87, 232, 0.08);
+    color: var(--ink, #25213b);
+
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.theme-icon {
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1;
+    transform: rotate(0deg) scale(1);
+    transition: transform 0.4s ease;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-2px);
+    background: rgba(114, 87, 232, 0.16);
+    border-color: rgba(114, 87, 232, 0.5);
+    box-shadow: 0 5px 18px rgba(114, 87, 232, 0.18);
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: rotate(25deg) scale(1.12);
+}
+
+.theme-toggle:active {
+    transform: scale(0.92);
+}
+
+.theme-toggle:focus-visible {
+    outline: 3px solid #a78bfa;
+    outline-offset: 4px;
+}
+
+/* Dark mode appearance */
+body.dark-mode .theme-toggle {
+    background: rgba(196, 181, 253, 0.12);
+    border-color: rgba(196, 181, 253, 0.3);
+    color: #ffffff;
+}
+
+body.dark-mode .theme-toggle:hover {
+    background: rgba(196, 181, 253, 0.22);
+    border-color: #c4b5fd;
+    box-shadow: 0 5px 20px rgba(167, 139, 250, 0.2);
+}
+
+body.dark-mode .theme-icon {
+    transform: rotate(180deg);
+}
+
+body.dark-mode .theme-toggle:hover .theme-icon {
+    transform: rotate(205deg) scale(1.12);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle,
+    .theme-icon {
+        transition: none;
+    }
+}
