@@ -1088,6 +1088,7 @@ connectFiles();
 
 const THEME_KEY = "skillup-theme";
 
+
 function updateThemeToggle() {
     const toggle = document.getElementById("themeToggle");
 
@@ -1099,14 +1100,26 @@ function updateThemeToggle() {
         ? "Switch to light mode"
         : "Switch to dark mode";
 
-    if (toggle.textContent.trim() !== icon) {
+    const iconElement = toggle.querySelector(".theme-icon");
+
+    if (iconElement) {
+        if (iconElement.textContent !== icon) {
+            iconElement.textContent = icon;
+        }
+    } else {
+        // Fallback if the old button markup is still present
         toggle.textContent = icon;
     }
 
     if (toggle.getAttribute("aria-label") !== label) {
         toggle.setAttribute("aria-label", label);
     }
+
+    if (toggle.getAttribute("title") !== label) {
+        toggle.setAttribute("title", label);
+    }
 }
+
 
 function applyTheme(theme) {
     document.body.classList.toggle("dark-mode", theme === "dark");
