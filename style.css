@@ -1968,4 +1968,37 @@ body.dark-mode .theme-toggle:hover .theme-icon {
     }
 }
 
+/* ===== Staggered Hero Text Animation ===== */
+
+.home-page .welcome-tag {
+    display: inline-block;
+    animation: homeTextEnter 0.7s ease-out 0.1s both;
+}
+
+.home-page .home-content h1 {
+    animation: homeTextEnter 0.8s ease-out 0.25s both;
+}
+
+.home-page .home-description {
+    animation: homeTextEnter 0.8s ease-out 0.4s both;
+}
+
+.home-page .home-buttons {
+    animation: homeTextEnter 0.8s ease-out 0.55s both;
+}
+
+.home-page .home-note {
+    animation: homeTextEnter 0.8s ease-out 0.7s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page .welcome-tag,
+    .home-page .home-content h1,
+    .home-page .home-description,
+    .home-page .home-buttons,
+    .home-page .home-note {
+        animation: none !important;
+    }
+}
+
 
