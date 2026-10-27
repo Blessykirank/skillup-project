@@ -2048,4 +2048,38 @@ body.dark-mode .theme-toggle:hover .theme-icon {
     }
 }
 
+/* ===== Explore SkillUp Button Hover ===== */
+
+.home-page .explore-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.home-page .explore-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(114, 87, 232, 0.14);
+    border-color: #7257e8;
+}
+
+.home-page .explore-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.home-page .explore-btn:focus-visible {
+    outline: 3px solid #a78bfa;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page .explore-btn {
+        transition: none;
+    }
+}
+
 
