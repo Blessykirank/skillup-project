@@ -2001,4 +2001,51 @@ body.dark-mode .theme-toggle:hover .theme-icon {
     }
 }
 
+/* ===== SkillUp Start Learning Button Hover ===== */
+
+.home-page .start-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.home-page .start-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(114, 87, 232, 0.3);
+}
+
+.home-page .start-btn span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.home-page .start-btn:hover span {
+    transform: translateX(5px);
+}
+
+.home-page .start-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.home-page .start-btn:focus-visible {
+    outline: 3px solid #a78bfa;
+    outline-offset: 4px;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .home-page .start-btn,
+    .home-page .start-btn span {
+        transition: none;
+    }
+}
+
 
