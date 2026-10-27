@@ -1882,4 +1882,90 @@ body.dark-mode .theme-toggle:hover .theme-icon {
     transform: rotate(205deg) scale(1.12);
 }
 
+/* ===== SkillUp Homepage Entrance Animations ===== */
+
+/* Text content enters smoothly */
+.home-page .home-content {
+    animation: homeTextEnter 0.9s ease-out both;
+}
+
+/* Learning illustration enters from the right */
+.home-page .home-illustration {
+    animation: homeIllustrationEnter 1s ease-out 0.15s both;
+}
+
+/* Floating badges gently bob up and down */
+.home-page .floating-badge {
+    animation: badgeFloat 3.5s ease-in-out infinite;
+}
+
+.home-page .badge-two {
+    animation-delay: 0.8s;
+}
+
+/* Existing decorative stars move gently */
+.home-page .floating-star {
+    animation: starTwinkle 2.5s ease-in-out infinite;
+}
+
+.home-page .star-two {
+    animation-delay: 1.2s;
+}
+
+@keyframes homeTextEnter {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes homeIllustrationEnter {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes badgeFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes starTwinkle {
+    0%, 100% {
+        opacity: 0.55;
+        scale: 1;
+    }
+
+    50% {
+        opacity: 1;
+        scale: 1.15;
+    }
+}
+
+/* Accessibility: reduce motion when requested */
+@media (prefers-reduced-motion: reduce) {
+    .home-page .home-content,
+    .home-page .home-illustration,
+    .home-page .floating-badge,
+    .home-page .floating-star {
+        animation: none !important;
+    }
+}
+
 
