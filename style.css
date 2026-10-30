@@ -2082,4 +2082,69 @@ body.dark-mode .theme-toggle:hover .theme-icon {
     }
 }
 
+/* ===== SkillUp Premium Course Card Hover ===== */
+
+.courses-page .course-card {
+    position: relative;
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.courses-page .course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(114, 87, 232, 0.16);
+    border-color: rgba(114, 87, 232, 0.4);
+}
+
+/* Course icon movement */
+.courses-page .course-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.35s ease;
+}
+
+.courses-page .course-card:hover .course-icon {
+    transform: scale(1.12) rotate(-5deg);
+}
+
+/* Course title highlight */
+.courses-page .course-card h2 {
+    transition: color 0.3s ease;
+}
+
+.courses-page .course-card:hover h2 {
+    color: #7257e8;
+}
+
+/* Smooth course button */
+.courses-page .course-card .start-btn {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.courses-page .course-card .start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(114, 87, 232, 0.25);
+}
+
+/* Keyboard accessibility */
+.courses-page .course-card .start-btn:focus-visible {
+    outline: 3px solid #a78bfa;
+    outline-offset: 4px;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .courses-page .course-card,
+    .courses-page .course-icon,
+    .courses-page .course-card h2,
+    .courses-page .course-card .start-btn {
+        transition: none;
+    }
+}
+
 
